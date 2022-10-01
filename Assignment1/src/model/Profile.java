@@ -9,19 +9,20 @@ package model;
  * @author 5567
  */
 public class Profile {
-       
+
     private String name;
-    private String id;
-    private String age;
+    private int id;
+    private int age;
     private String gender;
     private String startDate;
-    private String level;
+    private int level;
     private String teamInfo;
     private String positionTitle;
-    private String phoneNumber;
+    private int phoneNumber;
     private String email;
     private String photo;
-
+    
+    
     public String getName() {
         return name;
     }
@@ -30,19 +31,19 @@ public class Profile {
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -62,11 +63,11 @@ public class Profile {
         this.startDate = startDate;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
@@ -86,11 +87,11 @@ public class Profile {
         this.positionTitle = positionTitle;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -110,5 +111,8 @@ public class Profile {
         this.photo = photo;
     }
     
-    
+    @Override
+    public String toString(){
+    return name;
+}
 }

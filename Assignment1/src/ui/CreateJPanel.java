@@ -4,7 +4,9 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import model.Profile;
+import model.ProfileHistory;
 
 /**
  *
@@ -16,11 +18,15 @@ public class CreateJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     
-    Profile profile;
+    ProfileHistory history;
     
-    public CreateJPanel(Profile profile) {
+    public CreateJPanel(ProfileHistory history) {
         initComponents();
-        this.profile=profile;
+        this.history=history;
+    }
+
+    CreateJPanel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -97,46 +103,52 @@ public class CreateJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblName)
-                    .addComponent(lblEmployeeId)
-                    .addComponent(lblAge)
-                    .addComponent(lblGender)
-                    .addComponent(lblStartDate)
-                    .addComponent(lblLevel)
-                    .addComponent(lblTeamInfo)
-                    .addComponent(lblPositionTitle)
-                    .addComponent(lblPhoneNumber)
-                    .addComponent(lblEmail)
-                    .addComponent(lblPhoto))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                    .addComponent(txtEmployeeId)
-                    .addComponent(txtAge)
-                    .addComponent(txtGender)
-                    .addComponent(txtStartDate)
-                    .addComponent(txtLevel)
-                    .addComponent(txtTeamInfo)
-                    .addComponent(txtPositionTitle)
-                    .addComponent(txtPhoneNumber)
-                    .addComponent(txtEmail)
-                    .addComponent(txtPhoto))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
-                .addComponent(btnSave)
-                .addGap(125, 125, 125))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblName)
+                                    .addComponent(lblEmployeeId)
+                                    .addComponent(lblAge)
+                                    .addComponent(lblGender)
+                                    .addComponent(lblStartDate)
+                                    .addComponent(lblLevel)
+                                    .addComponent(lblTeamInfo)
+                                    .addComponent(lblPositionTitle)
+                                    .addComponent(lblPhoneNumber)
+                                    .addComponent(lblEmail)
+                                    .addComponent(lblPhoto))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                                    .addComponent(txtEmployeeId)
+                                    .addComponent(txtAge)
+                                    .addComponent(txtGender)
+                                    .addComponent(txtStartDate)
+                                    .addComponent(txtLevel)
+                                    .addComponent(txtTeamInfo)
+                                    .addComponent(txtPositionTitle)
+                                    .addComponent(txtPhoneNumber)
+                                    .addComponent(txtEmail)
+                                    .addComponent(txtPhoto)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(btnSave)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
                 .addComponent(lblTitle)
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,13 +192,54 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoto)
                     .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnSave))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSave)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        
+        String name = txtName.getText();
+        int id = Integer.parseInt(txtEmployeeId.getText());
+        int age = Integer.parseInt(txtAge.getText());
+        String gender = txtGender.getText();
+        String startDate = txtStartDate.getText();
+        int level = Integer.parseInt(txtLevel.getText());
+        String teamInfo = txtTeamInfo.getText();
+        String positionTitle = txtPositionTitle.getText();
+        int phoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+        String email =(txtEmail.getText());
+        String photo =(txtPhoto.getText());
+        
+        Profile vs=history.addNewProfile();
+        
+        vs.setName(name);
+        vs.setId(id);
+        vs.setAge(age);
+        vs.setGender(gender);
+        vs.setStartDate(startDate);
+        vs.setLevel(level);
+        vs.setTeamInfo(teamInfo);
+        vs.setPositionTitle(positionTitle);
+        vs.setPhoneNumber(phoneNumber);
+        vs.setEmail(email);
+        vs.setPhoto(photo);
+   
+        JOptionPane.showMessageDialog(this,"Profile Information Saved");
+        
+        txtName.setText("");
+        txtEmployeeId.setText("");
+        txtAge.setText("");
+        txtGender.setText("");
+        txtStartDate.setText("");
+        txtLevel.setText("");
+        txtTeamInfo.setText("");
+        txtPositionTitle.setText("");
+        txtPhoneNumber.setText("");
+        txtEmail.setText("");
+        txtPhoto.setText("");
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
