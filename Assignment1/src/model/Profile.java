@@ -4,6 +4,8 @@
  */
 package model;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author 5567
@@ -20,7 +22,16 @@ public class Profile {
     private String positionTitle;
     private int phoneNumber;
     private String email;
-    private String photo;
+   // private String photo;
+    private ImageIcon img;
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    public void setImg(ImageIcon img) {
+        this.img = img;
+    }
     
     
     public String getName() {
@@ -101,14 +112,6 @@ public class Profile {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
     
     @Override
