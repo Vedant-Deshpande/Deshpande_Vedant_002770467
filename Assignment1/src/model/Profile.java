@@ -20,9 +20,8 @@ public class Profile {
     private int level;
     private String teamInfo;
     private String positionTitle;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
-   // private String photo;
     private ImageIcon img;
 
     public ImageIcon getImg() {
@@ -98,14 +97,14 @@ public class Profile {
         this.positionTitle = positionTitle;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
+    
     public String getEmail() {
         return email;
     }
