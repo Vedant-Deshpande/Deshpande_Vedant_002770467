@@ -32,7 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnDoctor = new javax.swing.JButton();
         btnCommunity = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -43,6 +43,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnAdmin.setForeground(new java.awt.Color(255, 0, 0));
         btnAdmin.setText("Admin ");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminActionPerformed(evt);
+            }
+        });
 
         btnPatient.setForeground(new java.awt.Color(51, 51, 255));
         btnPatient.setText("Patient");
@@ -89,6 +94,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        // TODO add your handling code here:
+        LoginPage admin = new LoginPage();
+        admin.setVisible(true);
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
      * @param args the command line arguments
