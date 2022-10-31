@@ -4,52 +4,66 @@
  */
 package Model;
 
-import java.util.Date;
-
 /**
  *
- * @author 5567
+ * @author Sakshi Sasalate
  */
 public class Encounter {
-    private VitalSigns vitalSign;
-    private Date aptTime;
-    private String diagnosis;
+    private String encounter;
+    private String vitalSign;
+    private String timeSlot;
+    private String doctor;
 
-    public Encounter( VitalSigns vitalSign,
-            Date aptTime,
-            String result){
-
-        this.vitalSign =vitalSign;
-        this.aptTime = aptTime;
-        this.diagnosis = result;
-
+    @Override
+    public String toString() {
+        return  encounter;
     }
 
-    public VitalSigns getVitalSign() {
+    public Encounter(String encounter, String vitalSign, String timeSlot, String doctor) {
+        this.encounter = encounter;
+        this.vitalSign = vitalSign;
+        this.timeSlot = timeSlot;
+        this.doctor = doctor;
+    }
+
+   
+    public String getEncounter() {
+        return encounter;
+    }
+
+    public void setEncounter(String encounter) {
+        this.encounter = encounter;
+    }
+
+
+    
+    public String getVitalsign() {
         return vitalSign;
     }
 
-    public void setVitalSign(VitalSigns vitalSign) {
+    public void setVitalsign(String vitalSign) {
         this.vitalSign = vitalSign;
     }
 
-    public Date getAptTime() {
-        return aptTime;
+
+
+    public String getTimeSlot() {
+        return timeSlot;
     }
 
-    public void setAptTime(Date aptTime) {
-        this.aptTime = aptTime;
+    public void setTimeSlot(String timeSlot) {
+        this.timeSlot = timeSlot;
     }
 
-    public String getDiagnosis() {
-        return diagnosis;
+
+
+    public String getDoctor() {
+        return doctor;
     }
 
-    public void setDiagnosis(String result) {
-        this.diagnosis = result;
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
     }
-
-    void addEncounter(Encounter eh) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
+

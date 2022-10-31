@@ -4,47 +4,85 @@
  */
 package Model;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 /**
  *
- * @author 5567
+ * @author Sakshi Sasalate
  */
 public class Person {
-    private String fullName;
-    private House residence;
-    private String gender;
-    private Date dob;
+    private String name;
+    private int age;
     private int id;
+    private String gender;
+    private String illness;
+    private Resident residence;
+    private boolean isPatient;
+    private String pastIllness;
+    private double hb;
+    private double bloodPressure;
+    private  ArrayList<Encounter> encounterHistory;
+    private static int count =0;
 
-    public Person(String fullName,
-            House residence,
-            String gender,
-            Date dob,
-            int id) {
-
-        this.fullName = fullName;
-        this.residence = residence;
+    @Override
+    public String toString() {
+        return name;
+    }
+    
+    
+    public Person() {
+        count++;
+        this.id = count;
+    }
+    
+    public Person(String name, int age, String gender, String illness, String pastIllness, Resident residence, boolean isPatient, double bloodPressure, double hb) {
+        count++;
+        this.id = count;
+        this.name = name;
+        this.age = age;
         this.gender = gender;
-        this.dob = dob;
-        this.id = id;
-
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public House getResidence() {
-        return residence;
-    }
-
-    public void setResidence(House residence) {
+        this.illness = illness;
+        this.pastIllness = pastIllness;
         this.residence = residence;
+        this.isPatient = isPatient;
+        this.bloodPressure = bloodPressure;
+        this.hb = hb;
+        this.encounterHistory = new ArrayList<>();
+    }
+    
+    public Person(String name, int age, String gender, String illness, String pastIllness, Resident residence, boolean isPatient, double bloodPressure, double hb, ArrayList<Encounter> encounterHistory) {
+        count++;
+        this.id = count;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.illness = illness;
+        this.pastIllness = pastIllness;
+        this.residence = residence;
+        this.isPatient = isPatient;
+        this.bloodPressure = bloodPressure;
+        this.hb = hb;
+        this.encounterHistory = encounterHistory;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getGender() {
@@ -55,19 +93,61 @@ public class Person {
         this.gender = gender;
     }
 
-    public Date getDob() {
-        return dob;
+    public String getIllness() {
+        return illness;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setIllness(String illness) {
+        this.illness = illness;
     }
 
-    public int getId() {
-        return id;
+    public String getPastIllness() {
+        return pastIllness;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPastIllness(String pastIllness) {
+        this.pastIllness = pastIllness;
     }
+
+    public Resident getResidence() {
+        return residence;
+    }
+
+    public void setResidence(Resident residence) {
+        this.residence = residence;
+    }
+
+    public boolean isIsPatient() {
+        return isPatient;
+    }
+
+    public void setIsPatient(boolean isPatient) {
+        this.isPatient = isPatient;
+    }
+
+    public double getBloodPressure() {
+        return bloodPressure;
+    }
+
+    public void setBloodPressure(double bloodPressure) {
+        this.bloodPressure = bloodPressure;
+    }
+
+    public double getHB() {
+        return hb;
+    }
+
+    public void setHB(double hb) {
+        this.hb = hb;
+    }
+    public ArrayList<Encounter> getEncounterHistory() {
+        return encounterHistory;
+    }
+
+    public void setEncounterHistory(ArrayList<Encounter> encounterHistory) {
+        this.encounterHistory = encounterHistory;
+    }
+
+ 
+    
 }
